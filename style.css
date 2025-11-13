@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #020706;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #c3d2c5;
+}
+
+
+header {
+    text-align: center;
+    padding: 40px 0;
+    background-color: #eff1f4;
+    color: rgb(54, 164, 200);
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header h2 {
+    font-size: 1.5em;
+    font-weight: normal;
+    color: #ecf0f1;
+}
+
+
+section h2 {
+    color: #f3f7fb;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.benefits-list, .methods-list, .challenges-list {
+    list-style-position: inside;
+    padding-left: 20px;
+}
+
+.benefits-list li, .methods-list li, .challenges-list li {
+    margin-bottom: 25px;
+}
+
+.benefits-list h3, .methods-list h3, .challenges-list h3 {
+    color: #03090d;
+    margin-bottom: 10px;
+}
+
+.system-components {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.system-components li {
+    background-color: #ecf0f1;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    color: #34495e;
+    transition: all 0.3s ease;
+}
+
+.system-components li:hover {
+    background-color: #040c11;
+    color: white;
+    transform: translateY(-3px);
+}
+
+p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
