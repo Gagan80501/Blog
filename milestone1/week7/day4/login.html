@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Wanderlust Travel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body.login-page {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+            background-size: 400% 400%;
+            animation: magicalGradient 15s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-page .magical-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+            background-size: 400% 400%;
+            animation: magicalGradient 15s ease infinite;
+            opacity: 0.5;
+        }
+
+        .login-wrapper {
+            width: 100%;
+            max-width: 450px;
+            padding: 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .login-card {
+            background: #ffffff;
+            border-radius: 30px;
+            padding: 3rem 2.5rem;
+            box-shadow: 
+                0 20px 60px rgba(168, 85, 247, 0.15),
+                0 10px 30px rgba(236, 72, 153, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            position: relative;
+            overflow: hidden;
+            animation: cardFloat 6s ease-in-out infinite;
+        }
+
+        .login-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent 30%,
+                rgba(168, 85, 247, 0.05) 50%,
+                transparent 70%
+            );
+            animation: rotate 20s linear infinite;
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .login-logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 
+                0 10px 30px rgba(168, 85, 247, 0.4),
+                0 0 0 8px rgba(168, 85, 247, 0.1),
+                inset 0 2px 0 rgba(255, 255, 255, 0.3);
+            transform: perspective(1000px) rotateY(-5deg);
+            animation: logo3D 3s ease-in-out infinite;
+            position: relative;
+        }
+
+        .login-logo::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #a855f7, #ec4899, #3b82f6, #06b6d4);
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0;
+            animation: logoGlow 3s ease-in-out infinite;
+        }
+
+        .login-logo i {
+            font-size: 2.5rem;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .login-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 20px rgba(168, 85, 247, 0.3);
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .login-header p {
+            color: #64748b;
+            font-size: 1rem;
+        }
+
+        .login-form {
+            position: relative;
+            z-index: 2;
+        }
+
+        .form-group-3d {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group-3d i {
+            position: absolute;
+            left: 1.25rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #a855f7;
+            font-size: 1.1rem;
+            z-index: 3;
+        }
+
+        .form-group-3d input {
+            width: 100%;
+            padding: 1.25rem 1.25rem 1.25rem 3.5rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 15px;
+            font-size: 1rem;
+            background: #ffffff;
+            transition: all 0.3s ease;
+            box-shadow: 
+                0 4px 6px rgba(0, 0, 0, 0.05),
+                inset 0 1px 0 rgba(255, 255, 255, 1);
+            position: relative;
+        }
+
+        .form-group-3d input:focus {
+            outline: none;
+            border-color: #a855f7;
+            box-shadow: 
+                0 0 0 4px rgba(168, 85, 247, 0.1),
+                0 8px 20px rgba(168, 85, 247, 0.15),
+                0 0 0 1px #a855f7,
+                inset 0 1px 0 rgba(255, 255, 255, 1);
+            transform: translateY(-2px);
+        }
+
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .form-options label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #64748b;
+            cursor: pointer;
+        }
+
+        .form-options input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: #a855f7;
+        }
+
+        .forgot-link {
+            color: #a855f7;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .forgot-link:hover {
+            color: #ec4899;
+            text-decoration: underline;
+        }
+
+        .btn-login-3d {
+            width: 100%;
+            padding: 1.25rem;
+            background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+            border: none;
+            border-radius: 15px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 
+                0 10px 30px rgba(168, 85, 247, 0.4),
+                0 0 0 0 rgba(168, 85, 247, 0),
+                inset 0 2px 0 rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-login-3d::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn-login-3d:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-login-3d:hover {
+            transform: translateY(-3px);
+            box-shadow: 
+                0 15px 40px rgba(168, 85, 247, 0.5),
+                0 0 0 4px rgba(168, 85, 247, 0.1),
+                inset 0 2px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-login-3d:active {
+            transform: translateY(-1px);
+            box-shadow: 
+                0 8px 25px rgba(168, 85, 247, 0.4),
+                0 0 0 2px rgba(168, 85, 247, 0.1),
+                inset 0 2px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-login-3d span {
+            position: relative;
+            z-index: 2;
+        }
+
+        .signup-link-3d {
+            text-align: center;
+            color: #64748b;
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .signup-link-3d a {
+            color: #a855f7;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .signup-link-3d a:hover {
+            color: #ec4899;
+            text-decoration: underline;
+        }
+
+        .back-home {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            z-index: 100;
+        }
+
+        .back-home a {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .back-home a:hover {
+            color: white;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateX(-5px);
+            box-shadow: 0 6px 20px rgba(168, 85, 247, 0.4);
+        }
+
+        /* 3D Decorative Elements */
+        .decoration-circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .decoration-circle-1 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, #a855f7, transparent);
+            top: 10%;
+            right: 10%;
+            animation-delay: 0s;
+        }
+
+        .decoration-circle-2 {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, #ec4899, transparent);
+            bottom: 15%;
+            left: 15%;
+            animation-delay: 2s;
+        }
+
+        .decoration-circle-3 {
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, #3b82f6, transparent);
+            top: 50%;
+            left: 5%;
+            animation-delay: 4s;
+        }
+
+        @keyframes cardFloat {
+            0%, 100% {
+                transform: translateY(0) rotateX(0deg);
+            }
+            50% {
+                transform: translateY(-10px) rotateX(2deg);
+            }
+        }
+
+        @keyframes logo3D {
+            0%, 100% {
+                transform: perspective(1000px) rotateY(-5deg) rotateX(0deg);
+            }
+            50% {
+                transform: perspective(1000px) rotateY(5deg) rotateX(5deg);
+            }
+        }
+
+        @keyframes logoGlow {
+            0%, 100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.3;
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-20px) scale(1.1);
+            }
+        }
+
+        @keyframes magicalGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @media (max-width: 768px) {
+            .login-wrapper {
+                padding: 1rem;
+            }
+
+            .login-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .login-header h1 {
+                font-size: 2rem;
+            }
+
+            .back-home {
+                top: 1rem;
+                left: 1rem;
+            }
+
+            .back-home a {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body class="login-page">
+    <!-- Magical Background (hidden on login page) -->
+    <div class="magical-background"></div>
+
+    <!-- Decorative Circles -->
+    <div class="decoration-circle decoration-circle-1"></div>
+    <div class="decoration-circle decoration-circle-2"></div>
+    <div class="decoration-circle decoration-circle-3"></div>
+
+    <!-- Back to Home -->
+    <div class="back-home">
+        <a href="index.html">
+            <i class="fas fa-arrow-left"></i>
+            <span>Back to Home</span>
+        </a>
+    </div>
+
+    <!-- Login Wrapper -->
+    <div class="login-wrapper">
+        <div class="login-card">
+            <div class="login-header">
+                <div class="login-logo">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h1>Welcome Back</h1>
+                <p>Login to your account to continue</p>
+            </div>
+
+            <form id="loginFormPage" class="login-form">
+                <div class="form-group-3d">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group-3d">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <div class="form-options">
+                    <label>
+                        <input type="checkbox"> Remember me
+                    </label>
+                    <a href="#" class="forgot-link">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn-login-3d">
+                    <span>Login</span>
+                </button>
+                <p class="signup-link-3d">
+                    Don't have an account? <a href="#" id="signupToggle">Sign Up</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Sign Up Card (hidden by default) -->
+    <div class="login-wrapper" id="signupWrapper" style="display: none;">
+        <div class="login-card">
+            <div class="login-header">
+                <div class="login-logo">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <h1>Create Account</h1>
+                <p>Join us and start your journey</p>
+            </div>
+
+            <form id="signupFormPage" class="login-form">
+                <div class="form-group-3d">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Full Name" required>
+                </div>
+                <div class="form-group-3d">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group-3d">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <div class="form-group-3d">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Confirm Password" required>
+                </div>
+                <button type="submit" class="btn-login-3d">
+                    <span>Sign Up</span>
+                </button>
+                <p class="signup-link-3d">
+                    Already have an account? <a href="#" id="loginToggle">Login</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Login Form
+        const loginFormPage = document.getElementById('loginFormPage');
+        if (loginFormPage) {
+            loginFormPage.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Login successful! Redirecting...');
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 1000);
+            });
+        }
+
+        // Signup Form
+        const signupFormPage = document.getElementById('signupFormPage');
+        if (signupFormPage) {
+            signupFormPage.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Account created successfully! Redirecting to login...');
+                setTimeout(() => {
+                    document.getElementById('signupWrapper').style.display = 'none';
+                    document.querySelector('.login-wrapper:not(#signupWrapper)').style.display = 'block';
+                }, 1000);
+            });
+        }
+
+        // Toggle between Login and Signup
+        const signupToggle = document.getElementById('signupToggle');
+        const loginToggle = document.getElementById('loginToggle');
+        const loginWrapper = document.querySelector('.login-wrapper:not(#signupWrapper)');
+        const signupWrapper = document.getElementById('signupWrapper');
+
+        if (signupToggle) {
+            signupToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                loginWrapper.style.display = 'none';
+                signupWrapper.style.display = 'block';
+            });
+        }
+
+        if (loginToggle) {
+            loginToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                signupWrapper.style.display = 'none';
+                loginWrapper.style.display = 'block';
+            });
+        }
+    </script>
+</body>
+</html>
+

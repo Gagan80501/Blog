@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust Travel - Discover Amazing Destinations</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-globe"></i>
+                <span>Wanderlust</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#tours">Tours</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="login.html" class="login-btn">Login</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Explore the World</h1>
+            <p class="hero-subtitle">Discover breathtaking destinations and create unforgettable memories</p>
+            <div class="hero-buttons">
+                <a href="#tours" class="btn btn-primary">Book a Tour</a>
+                <a href="#destinations" class="btn btn-secondary">Explore</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Search Bar -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-box">
+                <div class="search-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <input type="text" placeholder="Where to?">
+                </div>
+                <div class="search-item">
+                    <i class="fas fa-calendar"></i>
+                    <input type="date">
+                </div>
+                <div class="search-item">
+                    <i class="fas fa-users"></i>
+                    <select>
+                        <option>1 Person</option>
+                        <option>2 People</option>
+                        <option>3 People</option>
+                        <option>4+ People</option>
+                    </select>
+                </div>
+                <button class="btn btn-search">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Destinations -->
+    <section id="destinations" class="destinations">
+        <div class="container">
+            <div class="section-header">
+                <h2>Popular Destinations</h2>
+                <p>Explore the most beautiful places on Earth</p>
+            </div>
+            <div class="destinations-grid">
+                <div class="destination-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800" alt="Paris">
+                        <div class="card-overlay">
+                            <span class="card-price">From $899</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Paris, France</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> France</p>
+                        <div class="card-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>4.9</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800" alt="Tokyo">
+                        <div class="card-overlay">
+                            <span class="card-price">From $1,299</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Tokyo, Japan</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Japan</p>
+                        <div class="card-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>4.8</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800" alt="Bali">
+                        <div class="card-overlay">
+                            <span class="card-price">From $699</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Bali, Indonesia</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Indonesia</p>
+                        <div class="card-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.7</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800" alt="New York">
+                        <div class="card-overlay">
+                            <span class="card-price">From $1,199</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>New York, USA</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> United States</p>
+                        <div class="card-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>4.9</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800" alt="Santorini">
+                        <div class="card-overlay">
+                            <span class="card-price">From $1,499</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Santorini, Greece</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Greece</p>
+                        <div class="card-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>4.9</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800" alt="Maldives">
+                        <div class="card-overlay">
+                            <span class="card-price">From $1,799</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Maldives</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Indian Ocean</p>
+                        <div class="card-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>5.0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Tours -->
+    <section id="tours" class="tours">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Tours</h2>
+                <p>Handpicked experiences for unforgettable adventures</p>
+            </div>
+            <div class="tours-grid">
+                <div class="tour-card">
+                    <div class="tour-image">
+                        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800" alt="Adventure Tour">
+                        <div class="tour-badge">Popular</div>
+                    </div>
+                    <div class="tour-content">
+                        <div class="tour-info">
+                            <span><i class="fas fa-clock"></i> 7 Days</span>
+                            <span><i class="fas fa-users"></i> Max 12</span>
+                            <span><i class="fas fa-map"></i> Europe</span>
+                        </div>
+                        <h3>European Adventure</h3>
+                        <p>Explore the historic cities and breathtaking landscapes of Europe in this 7-day adventure tour.</p>
+                        <div class="tour-footer">
+                            <span class="tour-price">$1,599</span>
+                            <button class="btn btn-outline book-slot-btn" data-tour="European Adventure" data-price="$1,599">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="tour-card">
+                    <div class="tour-image">
+                        <img src="https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=800" alt="Tropical Tour">
+                        <div class="tour-badge">New</div>
+                    </div>
+                    <div class="tour-content">
+                        <div class="tour-info">
+                            <span><i class="fas fa-clock"></i> 5 Days</span>
+                            <span><i class="fas fa-users"></i> Max 15</span>
+                            <span><i class="fas fa-map"></i> Asia</span>
+                        </div>
+                        <h3>Tropical Paradise</h3>
+                        <p>Relax on pristine beaches and experience the vibrant culture of Southeast Asia.</p>
+                        <div class="tour-footer">
+                            <span class="tour-price">$899</span>
+                            <button class="btn btn-outline book-slot-btn" data-tour="Tropical Paradise" data-price="$899">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="tour-card">
+                    <div class="tour-image">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800" alt="Cultural Tour">
+                    </div>
+                    <div class="tour-content">
+                        <div class="tour-info">
+                            <span><i class="fas fa-clock"></i> 10 Days</span>
+                            <span><i class="fas fa-users"></i> Max 20</span>
+                            <span><i class="fas fa-map"></i> Japan</span>
+                        </div>
+                        <h3>Japanese Culture Immersion</h3>
+                        <p>Discover ancient traditions and modern innovations in this comprehensive Japan tour.</p>
+                        <div class="tour-footer">
+                            <span class="tour-price">$2,299</span>
+                            <button class="btn btn-outline book-slot-btn" data-tour="Japanese Culture Immersion" data-price="$2,299">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Why Choose Us?</h2>
+                    <p>With over 10 years of experience in the travel industry, we've helped thousands of travelers discover their dream destinations. Our expert team curates unique experiences that combine adventure, culture, and relaxation.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Secure Booking</h4>
+                            <p>Your safety and satisfaction are our top priorities</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-handshake"></i>
+                            <h4>Best Price Guarantee</h4>
+                            <p>We offer the best prices with no hidden fees</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-headset"></i>
+                            <h4>24/7 Support</h4>
+                            <p>Round-the-clock assistance for all your travel needs</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800" alt="Travel Experience">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get in Touch</h2>
+                <p>Have questions? We'd love to hear from you</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>123 Travel Street, Adventure City, AC 12345</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>hello@wanderlust.com</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-globe"></i> Wanderlust</h3>
+                    <p>Making travel dreams come true since 2014</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#destinations">Destinations</a></li>
+                        <li><a href="#tours">Tours</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to get special offers and travel tips</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email">
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Wanderlust Travel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content modal-animate">
+            <span class="close-modal">&times;</span>
+            <div class="login-container">
+                <div class="login-header">
+                    <i class="fas fa-user-circle"></i>
+                    <h2>Welcome Back</h2>
+                    <p>Login to your account</p>
+                </div>
+                <form id="loginForm" class="login-form">
+                    <div class="form-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <div class="form-options">
+                        <label>
+                            <input type="checkbox"> Remember me
+                        </label>
+                        <a href="#" class="forgot-link">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Login</button>
+                    <p class="signup-link">Don't have an account? <a href="#" id="signupLink">Sign Up</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content modal-animate">
+            <span class="close-modal">&times;</span>
+            <div class="login-container">
+                <div class="login-header">
+                    <i class="fas fa-user-plus"></i>
+                    <h2>Create Account</h2>
+                    <p>Join us and start your journey</p>
+                </div>
+                <form id="signupForm" class="login-form">
+                    <div class="form-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Confirm Password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Sign Up</button>
+                    <p class="signup-link">Already have an account? <a href="#" id="loginLink">Login</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content modal-animate booking-modal">
+            <span class="close-modal">&times;</span>
+            <div class="booking-container">
+                <div class="booking-header">
+                    <h2><i class="fas fa-calendar-check"></i> Book Your Slot</h2>
+                    <p id="selectedTour">Tour Booking</p>
+                </div>
+                <form id="bookingForm" class="booking-form">
+                    <div class="booking-section">
+                        <h3><i class="fas fa-info-circle"></i> Tour Information</h3>
+                        <div class="info-display">
+                            <p><strong>Tour:</strong> <span id="tourName">-</span></p>
+                            <p><strong>Price:</strong> <span id="tourPrice">-</span></p>
+                        </div>
+                    </div>
+                    <div class="booking-section">
+                        <h3><i class="fas fa-calendar-alt"></i> Select Date</h3>
+                        <input type="date" id="bookingDate" class="booking-input" required>
+                    </div>
+                    <div class="booking-section">
+                        <h3><i class="fas fa-clock"></i> Select Time Slot</h3>
+                        <div class="time-slots">
+                            <button type="button" class="time-slot-btn" data-time="09:00">09:00 AM</button>
+                            <button type="button" class="time-slot-btn" data-time="10:00">10:00 AM</button>
+                            <button type="button" class="time-slot-btn" data-time="11:00">11:00 AM</button>
+                            <button type="button" class="time-slot-btn" data-time="14:00">02:00 PM</button>
+                            <button type="button" class="time-slot-btn" data-time="15:00">03:00 PM</button>
+                            <button type="button" class="time-slot-btn" data-time="16:00">04:00 PM</button>
+                        </div>
+                    </div>
+                    <div class="booking-section">
+                        <h3><i class="fas fa-users"></i> Number of Guests</h3>
+                        <div class="guest-selector">
+                            <button type="button" class="guest-btn" data-action="decrease">-</button>
+                            <span id="guestCount" class="guest-count">1</span>
+                            <button type="button" class="guest-btn" data-action="increase">+</button>
+                        </div>
+                    </div>
+                    <div class="booking-section">
+                        <h3><i class="fas fa-user"></i> Your Details</h3>
+                        <div class="form-group">
+                            <input type="text" placeholder="Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Phone Number" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Confirm Booking</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbot -->
+    <div class="chatbot-container">
+        <div id="chatbotButton" class="chatbot-button">
+            <i class="fas fa-comments"></i>
+            <span class="chatbot-pulse"></span>
+        </div>
+        <div id="chatbotWindow" class="chatbot-window">
+            <div class="chatbot-header">
+                <div class="chatbot-header-content">
+                    <i class="fas fa-robot"></i>
+                    <div>
+                        <h4>Travel Assistant</h4>
+                        <p>Online</p>
+                    </div>
+                </div>
+                <button class="chatbot-close">&times;</button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        <p>Hello! 👋 I'm your travel assistant. How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-input-area">
+                <input type="text" id="chatbotInput" placeholder="Type your message...">
+                <button id="sendMessageBtn" class="send-btn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Magical Background Animation -->
+    <div class="magical-background"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+

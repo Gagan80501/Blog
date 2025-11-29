@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dog Breed Detector</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🐾 Dog Breed Detector</h1>
+    <form id="uploadForm">
+      <input type="file" id="imageInput" accept="image/*" required />
+      <button type="submit">Detect Breed</button>
+    </form>
+    <div id="preview"></div>
+    <div id="result">
+      <h2 id="breedName"></h2>
+      <p id="accuracy"></p>
+      <p id="description"></p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
